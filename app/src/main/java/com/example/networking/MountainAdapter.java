@@ -13,11 +13,9 @@ import java.util.List;
 
 public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.MountainAdapterViewHolder> {
 
-    private ArrayList<Mountain> mountains;
+    private ArrayList<Mountain> mountains = new ArrayList<Mountain>();
 
-    public MountainAdapter(ArrayList<Mountain> mountains) {
-        this.mountains = mountains;
-    }
+    public MountainAdapter() {}
 
     @NonNull
     @Override
@@ -28,7 +26,7 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.Mounta
 
     @Override
     public void onBindViewHolder(@NonNull MountainAdapterViewHolder holder, int position) {
-        holder.mountainName.setText(mountains.get(position).toString());
+        holder.mountainName.setText(mountains.get(position).getName());
     }
 
     @Override
@@ -44,5 +42,9 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.Mounta
             super(itemView);
             mountainName = itemView.findViewById(R.id.mountain_name);
         }
+    }
+
+    public void setMountains(ArrayList<Mountain> mountains){
+        this.mountains = mountains;
     }
 }
