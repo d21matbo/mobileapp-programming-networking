@@ -42,11 +42,14 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     @Override
     public void onPostExecute(String json) {
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Mountain>>() {}.getType();
-        mountains = gson.fromJson(json, type);
-        adapter.setMountains(mountains);
-        adapter.notifyDataSetChanged();
+        if(json != null)
+        {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<Mountain>>() {}.getType();
+            mountains = gson.fromJson(json, type);
+            adapter.setMountains(mountains);
+            adapter.notifyDataSetChanged();
+        }
     }
 
 }
