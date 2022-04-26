@@ -3,15 +3,23 @@ package com.example.networking;
 public class Mountain {
 
     private String name;
+    private String location;
+    private int size;
+    private int cost;
 
-
-    public Mountain(){
-
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public String toString(){
+    public String getLocation() {
+        return location;
+    }
 
-        return "Test";
+    public int getSize() {
+        return size;
+    }
+
+    public int getCost() {
+        return cost;
     }
 }
