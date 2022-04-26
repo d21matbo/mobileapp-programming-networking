@@ -8,13 +8,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.MountainAdapterViewHolder> {
 
-    private List<String> mountains;
+    private ArrayList<Mountain> mountains;
 
-    public MountainAdapter(List<String> mountains) {
+    public MountainAdapter(ArrayList<Mountain> mountains) {
         this.mountains = mountains;
     }
 
@@ -27,7 +28,7 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.Mounta
 
     @Override
     public void onBindViewHolder(@NonNull MountainAdapterViewHolder holder, int position) {
-        holder.mountainName.setText(mountains.get(position));
+        holder.mountainName.setText(mountains.get(position).toString());
     }
 
     @Override
