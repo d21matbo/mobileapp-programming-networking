@@ -55,7 +55,6 @@ as the internal ArrayList of the adapter by `mountains = gson.fromJson(json, typ
 from being executed with a null value.
 
 - [x] Display the names of the mountains in the `RecyclerView`
-        Hint: override `toString()` in your Mountain class
 
 This code sets the value of each item in the recyclerview
 ```
