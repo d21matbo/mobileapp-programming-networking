@@ -45,9 +45,9 @@ public void onPostExecute(String json) {
     }
 }
 ```
-> An issue occurred when testing the application on a real device (OnePlus A3003) as this device did
-> not have a connection to the internet. The Application would crash due to a NullPointerException
-> in `MountainAdapter.java`
+An issue occurred when testing the application on a real device (OnePlus A3003) as this device did
+not have a connection to the internet. The Application would crash due to a NullPointerException
+in `MountainAdapter.java`
 
 The problem turned out to be `JsonTask(this).execute(JSON_URL)` returning null, which was set
 as the internal ArrayList of the adapter by `mountains = gson.fromJson(json, type)` and
