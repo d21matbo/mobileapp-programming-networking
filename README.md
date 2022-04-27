@@ -1,8 +1,6 @@
 
 # Rapport
 
-**Skriv din rapport här!**
-
 - [x] Add a `RecyclerView` to your layout
 
 Added RecyclerView to `activity_main.xml`
@@ -21,8 +19,8 @@ private MountainAdapter adapter;
 
 - [x] Create a RecyclerView.Adapter and a RecyclerView.ViewHolder
 
-Added 'MountainAdapter.java' with an internal 'MountainAdapterViewHolder' class. The adapter has a
-private arraylist that holds objects of the class 'Mountain'.
+Added `MountainAdapter.java` with an internal `MountainAdapterViewHolder` class. The adapter has a
+ArrayList that holds objects of the class `Mountain`.
 
 - [x] Use getJson() to download your json data by changing the JSON_URL and write code in onPostExecute().
 
@@ -47,13 +45,13 @@ public void onPostExecute(String json) {
     }
 }
 ```
-An issue occurred when testing the application on a real device (OnePlus A3003) as this device did
-not have any connection to the internet. The Application would crash due to a NullPointerException
-in 'MountainAdapter.java'
+> An issue occurred when testing the application on a real device (OnePlus A3003) as this device did
+> not have a connection to the internet. The Application would crash due to a NullPointerException
+> in `MountainAdapter.java`
 
-The problem turned out to be 'JsonTask(this).execute(JSON_URL)' returning null, which was set
-as the internal ArrayList of the adapter by 'mountains = gson.fromJson(json, type);' and
-'adapter.setMountains(mountains);'. A quick fix to the issue was to stop all code in 'onPostExecute'
+The problem turned out to be `JsonTask(this).execute(JSON_URL)` returning null, which was set
+as the internal ArrayList of the adapter by `mountains = gson.fromJson(json, type)` and
+`adapter.setMountains(mountains);`. A quick fix to the issue was to stop all code in `onPostExecute`
 from being executed with a null value.
 
 - [x] Display the names of the mountains in the `RecyclerView`
@@ -66,7 +64,7 @@ public void onBindViewHolder(@NonNull MountainAdapterViewHolder holder, int posi
 }
 ```
 
-'mountains.get(position)' retrieves the instance of 'Mountain' at a specific position.
-'.getName()' is a getter that returns the name of said instance.
+`mountains.get(position)` retrieves the instance of `Mountain` at a specific position.
+`.getName()` is a getter that returns the name of said instance.
 
 ![](Screenshot.png)
